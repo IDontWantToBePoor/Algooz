@@ -12,16 +12,19 @@ function isPalindrome(str){
             right -= 1;
         }
         else {
-            if(str[left + 1] == str[right]) {
+            if(allowance < 1 && str[left + 1] == str[right]) {
                 left += 2;
                 right -= 1;
+                allowance += 1;
             }
-            else if (str[right -1] == str[left]) {
+            else if (allowance < 1 && str[right -1] == str[left]) {
                 right -= 2;
                 left += 1;
+                allowance += 1;
             }
             else {
                 isPal = false;
+                allowance = 500;
                 break;
             }
         }
